@@ -39,11 +39,17 @@ var calculatorModule = ( function () {
   };
 
   calculator.multiply =  function(x){
+        if(typeof x !== 'number') {
+      throw new Error('I AM ERROR');
+    }      
       total*=x;
       return total;
   };
 
   calculator.divide =  function(x){
+        if(typeof x !== 'number') {
+    throw new Error('I AM ERROR');
+    }
       total/=x;
       return total;
   };
