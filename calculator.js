@@ -10,10 +10,11 @@ var calculatorModule = ( function () {
   var calculator={};
   var memory=0;
   var total=0;
-  if(typeof x !== 'number') {
-      throw new Error('Wrong data type you dummy');
-    }
+
   calculator.load = function (x){
+    if(typeof x !== 'number') {
+      throw new Error('I AM ERROR');
+    }
     total = x;
     return total;
   };
@@ -22,11 +23,17 @@ var calculatorModule = ( function () {
     };
 
   calculator.add =  function(x){
+        if(typeof x !== 'number') {
+      throw new Error('I AM ERROR');
+    }
     total+=x;
       return total;
   };
 
   calculator.subtract =  function(x){
+        if(typeof x !== 'number') {
+      throw new Error('I AM ERROR');
+    }
       total-=x;
       return total;
   };
