@@ -10,6 +10,9 @@ var calculatorModule = ( function () {
   var calculator={};
   var memory=0;
   var total=0;
+  if(typeof x !== 'number') {
+      throw new Error('Wrong data type you dummy');
+    }
   calculator.load = function (x){
     total = x;
     return total;
@@ -40,7 +43,16 @@ var calculatorModule = ( function () {
   calculator.recallMemory= function(){
     return memory;
   };
-  
+  calculator.saveMemory= function(){
+    memory=total;
+    return memory;
+  };
+  calculator.clearMemory= function(){
+    memory=0;
+    return memory;
+  };
+
+
 //public
 return calculator;
 
