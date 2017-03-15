@@ -5,7 +5,46 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+var calculatorModule = ( function () {
+  //private
+  var calculator={};
+  var memory=0;
+  var total=0;
+  calculator.load = function (x){
+    total = x;
+    return total;
+  };
+  calculator.getTotal =  function(){
+        return total;
+    };
 
+  calculator.add =  function(x){
+    total+=x;
+      return total;
+  };
+
+  calculator.subtract =  function(x){
+      total-=x;
+      return total;
+  };
+
+  calculator.multiply =  function(x){
+      total*=x;
+      return total;
+  };
+
+  calculator.divide =  function(x){
+      total/=x;
+      return total;
+  };
+  calculator.recallMemory= function(){
+    return memory;
+  };
+  
+//public
+return calculator;
+
+});
 
   /**
    * sets the `total` to the number passed in
